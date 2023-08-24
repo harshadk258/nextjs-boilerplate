@@ -1,0 +1,43 @@
+//* for iphone 5s/se1
+@mixin mobile-m {
+  @media screen and (max-width: $mobile-m-bp) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: $mobile-bp) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: $tablet-bp) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (max-width: $desktop-bp) {
+    @content;
+  }
+}
+
+@mixin desktop-l {
+  @media screen and (max-width: $desktop-md-bp) {
+    @content;
+  }
+}
+
+@mixin link($color) {
+  & {
+    color: $color;
+    text-decoration: none;
+    @content;
+    &:visited,
+    &:active,
+    &:focus {
+      color: $color;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@import '../../styles/utils.scss';
+$menuHeightMobile: 60px;
+$menuHeightMinimized: 60px;
+
+.el {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $z-header;
+  transition: all 0.4s;
+  background-color: transparent;
+  & > .container {
+    height: 100px;
+    position: relative;
+  }
+  & > .container {
+    @include tablet {
+      height: $menuHeightMobile;
+    }
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: $container-md;
+    margin: 0 auto;
+    transition: all 0.4s ease-in-out;
+    // @include tablet {
+    //   height: 60px;
+    // }
+  }
+}

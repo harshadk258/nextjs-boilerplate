@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bodw-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bodw-app
+  template:
+    metadata:
+      labels:
+        app: bodw-app
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+        - name: bodw-app
+          image: bodwacr.azurecr.io/bodwacr-app:v{{TAGNUMBER}}
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bodw-app-service
+spec:
+  ports:
+    - port: 80
+      targetPort: 3000
+  selector:
+    app: bodw-app

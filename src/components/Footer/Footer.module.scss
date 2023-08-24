@@ -1,0 +1,155 @@
+@import '../../styles/utils.scss';
+
+.el {
+  width: 100%;
+  padding: 80px 0 58px;
+  color: #fff;
+  @include tablet {
+    padding: 40px 0 35px;
+  }
+  .container {
+    max-width: $container-md;
+  }
+  .top {
+    border-bottom: 2px solid #525180;
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 40px;
+      @include tablet {
+        flex-direction: column-reverse;
+        padding-bottom: 30px;
+      }
+    }
+  }
+  .bottom {
+    .container {
+
+      padding-top: 44px;
+    }
+  }
+  .flexrow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    @include mobile {
+      display: block;
+    }
+    & + .flexrow {
+      margin-top: 50px;
+      @include mobile {
+        margin-top: 20px;
+      }
+    }
+    &.last {
+      flex-direction: row-reverse;
+      align-items:flex-end;
+      @include mobile {
+        flex-direction: column;
+      }
+    }
+    h2 {
+      @include mobile {
+        margin-bottom: 40px;
+      }
+    }
+  }
+  .sitemap {
+    display: flex;
+    flex-wrap: wrap;
+    @include tablet {
+      // display: block;
+      margin-top: 40px;
+    }
+    @include mobile {
+      margin-right: -7vw;
+    }
+    &Col {
+      margin-right: 5.5vw;
+      @include mobile {
+        margin-right: 7vw;
+      }
+      h5, .h5 {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 1.44;
+        margin-bottom: 13px;
+        a {
+          color: #fff;
+        }
+        @include tablet {
+          margin-bottom: 10px;
+        }
+      }
+      &.long {
+
+      }
+      &.short {
+
+      }
+    }
+    &Block {
+      min-width: 140px;
+      @include tablet {
+        margin-bottom: 30px;
+      }
+      @include mobile {
+        margin-bottom: 40px;
+      }
+      &.first {
+
+      }
+      &.last {
+        margin-top: 40px;
+        @include tablet {
+          margin-top: 0;
+        }
+      }
+    }
+    &Link {
+      display: block;
+      font-size: 14px;
+      line-height: 1.14;
+      color: #fff;
+      padding: 4px 0;
+      @include tablet {
+        // display: none;
+      }
+    }
+  }
+  .social {
+    display: flex;
+    align-items: center;
+    @include mobile {
+      margin-bottom: 60px;
+    }
+    a {
+      display: block;
+      margin: 0 8px;
+      color: #fff;
+      height:32px;
+      width: 32px;
+      @include mobile {
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+      span {
+        font-size: 32px;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .logo {
+    width: 183px;
+    @include tablet {
+      width: 150px;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+}
